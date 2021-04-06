@@ -4,100 +4,82 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.io.Serializable;
+import java.util.Optional;
 
 public class GenericTest {
 
-    private Integer x;
-    private Float y;
-    private String z;
+
+    private Object Optional;
 
     @Test
     public void givenThreeIntegers_whenFindMax1_returnTrue() {
         GenericMainClass genericsMainClass = new GenericMainClass();
-        int a = 30;
-        int b = 20;
-        int c = 10;
-        Integer result = (Integer) genericsMainClass.findMaxValue(a, b, c);
-        Assert.assertEquals(a, result.intValue());
+        Integer myArray[]={10,20,30,40};
+        Object result =  genericsMainClass.findMaxValue(myArray);
+        Assert.assertEquals(myArray[3], result);
     }
 
     @Test
     public void givenThreeIntegers_whenFindMax2_returnTrue() {
         GenericMainClass genericsMainClass = new GenericMainClass();
-        int a = 10;
-        int b = 30;
-        int c = 20;
-        Integer result = (Integer) genericsMainClass.findMaxValue(a, b, c);
-        Assert.assertEquals(b, result.intValue());
+        Integer myArray[]={10,20,40,30};
+        Object result =  genericsMainClass.findMaxValue(myArray);
+        Assert.assertEquals(myArray[2], result);
     }
 
     @Test
     public void givenThreeIntegers_whenFindMax3_returnTrue() {
         GenericMainClass genericsMainClass = new GenericMainClass();
-        int a = 20;
-        int b = 10;
-        int c = 30;
-        Integer result = (Integer) genericsMainClass.findMaxValue(a, b, c);
-        Assert.assertEquals(c, result.intValue());
+        Integer myArray[]={500,20,40,30};
+        Object result =  genericsMainClass.findMaxValue(myArray);
+        Assert.assertEquals(myArray[0], result);
     }
 
     @Test
     public void givenThreeFloat_whenFindMax1_returnTrue() {
         GenericMainClass genericsMainClass = new GenericMainClass();
-        float a = 30.8f;
-        float b = 20.0f;
-        float c = 10.0f;
-        Float result = (Float) genericsMainClass.findMaxValue(a, b, c);
-        Assert.assertEquals(a, result.floatValue());
+        Float myArray[]={500.0f,20.0f,40.0f,30.0f};
+        Object result =  genericsMainClass.findMaxValue(myArray);
+        Assert.assertEquals(myArray[0], result);
     }
 
     @Test
     public void givenThreeFloat_whenFindMax2_returnTrue() {
         GenericMainClass genericsMainClass = new GenericMainClass();
-        float a = 10.0f;
-        float b = 30.0f;
-        float c = 20.0f;
-        Float result = (Float) genericsMainClass.findMaxValue(a, b, c);
-        Assert.assertEquals(b, result.floatValue());
+        Float myArray[]={10.0f,20.0f,40.0f,30.0f};
+        Object result =  genericsMainClass.findMaxValue(myArray);
+        Assert.assertEquals(myArray[2], result);
     }
 
     @Test
     public void givenThreeFloat_whenFindMax3_returnTrue() {
         GenericMainClass genericsMainClass = new GenericMainClass();
-        float a = 20.0f;
-        float b = 10.0f;
-        float c = 30.0f;
-        Float result = (Float) genericsMainClass.findMaxValue(a, b, c);
-        Assert.assertEquals(c, result.floatValue());
+        Float myArray[]={10.0f,40.0f,20.0f,30.0f};
+        Object result =  genericsMainClass.findMaxValue(myArray);
+        Assert.assertEquals(myArray[1], result);
     }
 
     @Test
     public void givenThreeString_whenFindMax1_returnTrue() {
         GenericMainClass genericsMainClass = new GenericMainClass();
-        String a = "Peach";
-        String b = "Apple";
-        String c = "Banana";
-        String result = (String) genericsMainClass.findMaxValue(a, b, c);
-        Assert.assertEquals(a, result);
+        String myArray[]={"Apple","Peach","Banana","Grapes"};
+        Object result =  genericsMainClass.findMaxValue(myArray);
+        Assert.assertEquals(myArray[1], result);
     }
 
     @Test
     public void givenThreeString_whenFindMax2_returnTrue() {
         GenericMainClass genericsMainClass = new GenericMainClass();
-        String a = "Banana";
-        String b = "Peach";
-        String c = "Apple";
-        String result = (String) genericsMainClass.findMaxValue(a, b, c);
-        Assert.assertEquals(b, result);
+        String myArray[]={"Apple","Banana","Peach","Grapes"};
+        Object result =  genericsMainClass.findMaxValue(myArray);
+        Assert.assertEquals(myArray[2], result);
     }
 
     @Test
     public void givenThreeString_whenFindMax3_returnTrue() {
         GenericMainClass genericsMainClass = new GenericMainClass();
-        String a = "Apple";
-        String b = "Banana";
-        String c = "Peach";
-        String result = (String) genericsMainClass.findMaxValue(a, b, c);
-        Assert.assertEquals(c, result);
+        String myArray[]={"Apple","Banana","Grapes","Peach"};
+        Object result =  genericsMainClass.findMaxValue(myArray);
+        Assert.assertEquals(myArray[3], result);
     }
 }
