@@ -1,0 +1,2 @@
+com/project/GenericMainClass.java
+ com.project.GenericMainClass
